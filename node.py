@@ -28,14 +28,14 @@ class Operator_node(Node):
 
 
 '''
-Node used to store an integer.
+Node used to store an float.
 '''
-class Int_node(Node):
-    def __init__(self, value: int):
+class Float_node(Node):
+    def __init__(self, value: float):
         self.value = value
 
     def __str__(self):
-        return 'Int({value})'.format(\
+        return 'Float({value})'.format(\
             value = self.value
         )
 
@@ -47,7 +47,7 @@ class Int_node(Node):
 Node used to store a variable name and value.
 '''
 class Variable_node(Node):
-    def __init__(self, name: str, value: int = None):
+    def __init__(self, name: str, value: float = None):
         self.name  = name
         self.value = value
 

@@ -7,7 +7,7 @@ The program state is used to keep track of all the variables.
 The program counter is used to keep track of the line number that needs to be executed.
 '''
 class Program_state:
-    def __init__(self, program_state: Dict[str, int] = {}, PC: int = 0):
+    def __init__(self, program_state: Dict[str, float] = {}, PC: int = 0):
         self.program_state = program_state
         self.PC = PC
 

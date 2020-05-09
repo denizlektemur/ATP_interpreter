@@ -6,7 +6,7 @@ from typing import Union
 Token class used to store the token type and value.
 '''
 class Token:
-    def __init__(self, type: Token_types, value: Union[str, int]):
+    def __init__(self, type: Token_types, value: Union[str, float]):
         self.type  = type
         self.value = value
 

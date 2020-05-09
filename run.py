@@ -1,4 +1,4 @@
-from node       import Operator_node, Int_node, Variable_node, Print_node, If_node, Endif_node, While_node, Endwhile_node, Node
+from node       import Operator_node, Float_node, Variable_node, Print_node, If_node, Endif_node, While_node, Endwhile_node, Node
 from operations import Operations
 from program_state import Program_state
 from typing import List
@@ -26,7 +26,7 @@ def execute_node(node, program_state: Program_state) -> Program_state:
     This function executes the given node by calling the matching operation.
     This function returns the new program state.
     '''
-    if type(node) == Int_node:
+    if type(node) == Float_node:
         return node.value
 
     elif type(node) == Operator_node:

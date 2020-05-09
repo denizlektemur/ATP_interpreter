@@ -1,4 +1,4 @@
-from node import Operator_node, Int_node, Variable_node, Print_node, If_node, Endif_node, While_node, Endwhile_node, Node
+from node import Operator_node, Float_node, Variable_node, Print_node, If_node, Endif_node, While_node, Endwhile_node, Node
 from token_types import Token_types
 from operations import Operations
 from token import Token
@@ -109,8 +109,8 @@ def get_nodes(tokens: List[Token]) -> List[Node]:
     
     head, *tail = tokens
 
-    if head.type == Token_types.INTEGER:
-        return [Int_node(head.value)] + get_nodes(tail)
+    if head.type == Token_types.FLOAT:
+        return [Float_node(head.value)] + get_nodes(tail)
     elif head.type == Token_types.PLUS:
         return [Operator_node(Operations.PLUS, Node, Node)] + get_nodes(tail)
     elif head.type == Token_types.MINUS:

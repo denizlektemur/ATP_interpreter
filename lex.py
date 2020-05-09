@@ -7,8 +7,8 @@ def get_token(text: str) -> Token:
     '''
     This function returns a token based on the given string.
     '''
-    if text.isdigit():
-        return Token(Token_types.INTEGER, int(text))
+    if text.isdigit() or text.replace('.', '', 1).isdigit() or text.replace('-', '', 1).isdigit():
+        return Token(Token_types.FLOAT, float(text))
     elif text == Token_types.PLUS.value:
         return Token(Token_types.PLUS, text)
     elif text == Token_types.MINUS.value:
