@@ -1,6 +1,44 @@
-? hallo dit moet genegeerd worden
-A HORIZONTAL_LINES 3
-? wat is dit
-? commentaar?
-A HORIZONTAL_LINES A HORIZONTAL_LINE 2
-? ik denk het
+? C style:
+?
+? int my_balance = 25;
+? if(my_balance < 10 * 3){
+?   printf("%d", my_balance);
+? }
+?
+? Lines style:
+
+my_balance HORIZONTAL_LINES 25
+IF my_balance BROKEN_LINE_LEFT 10 DIAGONAL_LINES 3
+    SHOW my_balance
+!IF
+
+? expected output:
+? 25
+
+? C style:
+?
+? countdown = 10;
+? while(countdown > -1){
+?   printf("%d", countdown);
+?   countdown = countdown - 1
+? }
+?
+? Lines style:
+
+countdown HORIZONTAL_LINES 10
+WHILE countdown BROKEN_LINE_RIGHT 0
+    SHOW countdown
+    countdown HORIZONTAL_LINES countdown HORIZONTAL_LINE 1
+!WHILE
+
+? expected output:
+? 10
+? 9
+? 8
+? 7
+? 6
+? 5
+? 4
+? 3
+? 2
+? 1
